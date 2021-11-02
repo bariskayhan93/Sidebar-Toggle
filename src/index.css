@@ -209,11 +209,11 @@ Modal
   visibility: hidden;
   z-index: -1;
 }
-/* OPEN/CLOSE MODAL */
+/* OPEN/CLOSE MODAL 
 .show-modal {
   visibility: visible;
   z-index: 10;
-}
+}*/
 .modal-container {
   background: var(--clr-white);
   border-radius: var(--radius);
@@ -225,6 +225,25 @@ Modal
   place-items: center;
   position: relative;
 }
+
+.show-modal.enter-done{
+opacity:1;
+pointer-events: visible;
+}
+
+.show-modal.exit{
+  opacity: 0;
+}
+
+.show-modal.enter-done .modal-container {
+transform: translateY(-600px);
+margin: 0 auto
+}
+
+.show-modal.exit .modal-container{
+  transform: translateY(0);
+}
+
 .close-modal-btn {
   position: absolute;
   top: 1rem;

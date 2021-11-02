@@ -1,17 +1,16 @@
 import React, { useContext, useState } from "react";
-import { FaBars } from "react-icons/fa";
+import { CgMenuGridO } from "react-icons/cg";
 import { AppContext, useGlobalContext } from "./context";
-import clickHandler from "./App.js";
 
 const Home = () => {
-  const [isSidebarOpen, setIsSidebarOpen] = useState(null);
+  const { openSidebar, openModal } = useGlobalContext();
 
   return (
     <main>
-      <button className="sidebar-toggle" onClick={() => clickHandler()}>
-        <FaBars />
+      <button className="sidebar-toggle" onClick={openSidebar}>
+        <CgMenuGridO />
       </button>
-      <button className="btn">show modal</button>
+      <button className="btn" onClick={openModal}>show modal</button>
     </main>
   );
 };
